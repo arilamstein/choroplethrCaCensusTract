@@ -85,6 +85,7 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
   df[, c("region", "value")] # only return (region, value) pairs
 }
 
+#' @export
 ca_tract_choropleth_acs = function(tableId, endyear=2011, span=5, num_colors=7, tract_zoom=NULL, county_zoom=NULL)
 {
   acs.data = get_ca_tract_acs_data(tableId, endyear, span)

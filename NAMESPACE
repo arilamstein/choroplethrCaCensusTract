@@ -2,6 +2,7 @@
 
 export(CaTractChoropleth)
 export(ca_tract_choropleth)
+export(ca_tract_choropleth_acs)
 export(get_ca_tract_acs_data)
 export(get_ca_tract_demographics)
 importFrom(Hmisc,cut2)
