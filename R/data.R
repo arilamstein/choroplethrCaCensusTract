@@ -26,3 +26,13 @@ NULL
 #' @name ca.tract.regions
 #' @usage data(ca.tract.regions)
 NULL
+
+#'  A data.frame containing population estimates for California Census Tracts in 2012. 
+#' 
+#' @references Taken from the US American Community Survey (ACS) 5 year estimates.
+#' @seealso ?df_pop_ca_tract
+#'  
+#' @docType data
+#' @name df_pop_ca_tract
+#' @usage data(df_pop_ca_tract)
+NULL

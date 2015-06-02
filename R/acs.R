@@ -1,3 +1,4 @@
+#' @importFrom acs geo.make acs.fetch geography
 get_all_ca_tracts = function()
 {
   ca.counties = acs.fetch(geography    = geo.make(state = 6, county = "*"), 
