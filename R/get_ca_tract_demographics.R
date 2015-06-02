@@ -1,3 +1,13 @@
+#' Get a handful of demographic variables on California Census Tracts from the US Census Bureau as a data.frame.
+#' 
+#' The data comes from the American Community Survey (ACS). The variables are: total population, percent White 
+#' not Hispanic, Percent Black or African American not Hispanic, percent Asian not Hispanic,
+#' percent Hispanic all races, per-capita income, median rent and median age.
+#' @param endyear The end year for the survey
+#' @param span The span of the survey
+#' @references The choroplethr guide to Census data: http://cran.r-project.org/web/packages/choroplethr/vignettes/e-mapping-us-census-data.html
+#' @references A list of all ACS Surveys: http://factfinder.census.gov/faces/affhelp/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS
+#' @importFrom acs geo.make acs.fetch geography estimate
 #' @export
 get_ca_tract_demographics = function(endyear=2013, span=5)
 {  

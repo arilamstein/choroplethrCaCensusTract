@@ -85,7 +85,31 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
   df[, c("region", "value")] # only return (region, value) pairs
 }
 
+#' Create a choropleth map of California Census Tracts from ACS data
+#' 
+#' Creates a choropleth of California Census Tracts the US Census' American Community Survey (ACS) data.  
+#' Requires the acs package to be installed, and a Census API Key to be set with 
+#' the acs's api.key.install function.  Census API keys can be obtained at http://www.census.gov/developers/tos/key_request.html.
+#'
+#' @param tableId The id of an ACS table
+#' @param endyear The end year of the survey to use.  See acs.fetch (?acs.fetch) and http://1.usa.gov/1geFSSj for details.
+#' @param span The span of time to use.  See acs.fetch and http://1.usa.gov/1geFSSj for details.
+#' @param num_colors The number of colors on the map. A value of 1 
+#' will use a continuous scale. A value in [2, 9] will use that many colors. 
+#' @param tract_zoom An optional list of states to zoom in on. Must come from the "region" column in
+#' ?ca.tract.regions.
+#' @param county_zoom An optional list of counties to zoom in on. Must match entries of the county.fips.numeric column of 
+#' ?ca.tract.regions.
+#' @return A choropleth.
+#' 
+#' @keywords choropleth, acs
+#' 
+#' @seealso \code{api.key.install} in the acs package which sets an Census API key for the acs library
+#' @seealso http://factfinder2.census.gov/faces/help/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS 
+#' which contains a list of all ACS surveys.
+#' @references Uses the acs package created by Ezra Haber Glenn.
 #' @export
+#' @importFrom acs acs.fetch geography estimate geo.make
 ca_tract_choropleth_acs = function(tableId, endyear=2011, span=5, num_colors=7, tract_zoom=NULL, county_zoom=NULL)
 {
   acs.data = get_ca_tract_acs_data(tableId, endyear, span)
