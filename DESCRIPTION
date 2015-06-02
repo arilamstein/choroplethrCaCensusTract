@@ -15,7 +15,7 @@ Description: The shapefile is taken from the US Census Bureau's 2010
 License: MIT + file LICENSE
 URL: https://github.com/arilamstein/choroplethrCaCensusTract,
     https://groups.google.com/forum/#!forum/choroplethr
-imports:
+Imports:
     choroplethr (>= 3.0.0),
     R6,
     scales,
