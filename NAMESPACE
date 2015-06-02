@@ -2,8 +2,13 @@
 
 export(CaTractChoropleth)
 export(ca_tract_choropleth)
+export(get_ca_tract_acs_data)
 importFrom(Hmisc,cut2)
 importFrom(R6,R6Class)
+importFrom(acs,acs.fetch)
+importFrom(acs,estimate)
+importFrom(acs,geo.make)
+importFrom(acs,geography)
 importFrom(choroplethr,Choropleth)
 importFrom(dplyr,left_join)
 importFrom(ggplot2,aes)
