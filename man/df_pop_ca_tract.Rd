@@ -10,6 +10,20 @@ data(df_pop_ca_tract)
 \description{
 A data.frame containing population estimates for California Census Tracts in 2012.
 }
+\examples{
+\dontrun{
+data(df_pop_ca_tract)
+ca_tract_choropleth(df_pop_ca_tract,
+                    title  = "2012 California Census Tract\\n Population Estimates",
+                    legend = "Population")
+
+# zoom in on San Francisco, which has FIPS code 6075
+ca_tract_choropleth(df_pop_ca_tract,
+                    title  = "2012 California Census Tract\\n Population Estimates",
+                    legend = "Population",
+                    county_zoom = 6075)
+}
+}
 \references{
 Taken from the US American Community Survey (ACS) 5 year estimates.
 }

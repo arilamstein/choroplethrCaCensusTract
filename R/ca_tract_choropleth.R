@@ -69,6 +69,19 @@ CaTractChoropleth = R6Class("CaTractChoropleth",
 #' @importFrom ggplot2 ggplot aes geom_polygon scale_fill_brewer ggtitle theme theme_grey element_blank geom_text
 #' @importFrom ggplot2 scale_fill_continuous scale_colour_brewer  
 #' @importFrom scales comma
+#' @examples
+#' \dontrun{
+#' data(df_pop_ca_tract)
+#' ca_tract_choropleth(df_pop_ca_tract, 
+#'                     title  = "2012 California Census Tract\n Population Estimates", 
+#'                     legend = "Population")
+#' 
+#' # zoom in on San Francisco, which has FIPS code 6075
+#' ca_tract_choropleth(df_pop_ca_tract, 
+#'                     title  = "2012 California Census Tract\n Population Estimates", 
+#'                     legend = "Population",
+#'                     county_zoom = 6075)
+#' }
 ca_tract_choropleth = function(df, title="", legend="", num_colors=7, tract_zoom=NULL, county_zoom=NULL)
 {
   c = CaTractChoropleth$new(df)

@@ -4,7 +4,7 @@
 \name{CaTractChoropleth}
 \alias{CaTractChoropleth}
 \title{An R6 object for creating choropleths of California Census Tracts.}
-\format{\preformatted{Class 'R6ClassGenerator' <environment: 0x10e8b2a78> 
+\format{\preformatted{Class 'R6ClassGenerator' <environment: 0x1035680d0> 
  - attr(*, "name")= chr "CaTractChoropleth_generator"
 }}
 \usage{
