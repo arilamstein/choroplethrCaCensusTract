@@ -81,5 +81,12 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
 
   # now concat with the tract id
   df$region = paste0(df$state, df$county, df$tract)
-  df
+
+  df[, c("region", "value")] # only return (region, value) pairs
+}
+
+ca_tract_choropleth_acs = function(tableId, endyear=2011, span=5, num_colors=7, tract_zoom=NULL, county_zoom=NULL)
+{
+  acs.data = get_ca_tract_acs_data(tableId, endyear, span)
+  ca_tract_choropleth(acs.data[['df']], acs.data[['title']], "", num_colors, tract_zoom, county_zoom)
 }

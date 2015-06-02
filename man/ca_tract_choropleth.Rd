@@ -9,7 +9,7 @@ ca_tract_choropleth(df, title = "", legend = "", num_colors = 7,
 }
 \arguments{
 \item{df}{A data.frame with a column named "region" and a column named "value".  Elements in
-the "region" column must exactly match how census tracts are labelled in in the "region" column in ?ca.census.tract.regions}
+the "region" column must exactly match how census tracts are labelled in in the "region" column in ?ca.tract.regions}
 
 \item{title}{An optional title for the map.}
 
@@ -19,11 +19,11 @@ the "region" column must exactly match how census tracts are labelled in in the 
 will use a continuous scale. A value in [2, 9] will use that many colors.}
 
 \item{tract_zoom}{An optional vector of tracts to zoom in on. Elements of this vector must exactly
-match the names of tracts as they appear in the "region" column of ?ca.census.tract.regions.}
+match the names of tracts as they appear in the "region" column of ?ca.tract.regions.}
 
 \item{county_zoom}{An optional vector of county FIPS codes to zoom in on. Elements of this
 vector must exactly match the names of counties as they appear in the "county.fips.numeric" column
-of ?ca.census.tract.regions.}
+of ?ca.tract.regions.}
 }
 \description{
 Create a choropleth of US Census Tracts in California

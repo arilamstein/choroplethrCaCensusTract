@@ -10,12 +10,12 @@ CaTractChoropleth = R6Class("CaTractChoropleth",
     # initialize with a map of California Census Tracts
     initialize = function(user.df)
     {
-      data(ca.census.tract.map, package="choroplethrCaCensusTract", envir=environment())
-      super$initialize(ca.census.tract.map, user.df)
+      data(ca.tract.map, package="choroplethrCaCensusTract", envir=environment())
+      super$initialize(ca.tract.map, user.df)
       
       if (private$has_invalid_regions)
       {
-        warning("Please see ?ca.census.tract.regions for a list of mappable regions")
+        warning("Please see ?ca.tract.regions for a list of mappable regions")
       }
     },
     
@@ -32,15 +32,15 @@ CaTractChoropleth = R6Class("CaTractChoropleth",
         stop("You can only zoom in by one of county_zoom or tract_zoom")
       }
       
-      data(ca.census.tract.regions, package="choroplethrCaCensusTract", envir=environment())
+      data(ca.tract.regions, package="choroplethrCaCensusTract", envir=environment())
       
       # if the zip_zoom field is selected, just do default behavior
       if (!is.null(tract_zoom)) {
         super$set_zoom(tract_zoom)
       # if county_zoom field is selected, extract zips from counties  
       } else if (!is.null(county_zoom)) {
-        stopifnot(all(county_zoom %in% unique(ca.census.tract.regions$county.fips.numeric)))
-        tracts = ca.census.tract.regions[ca.census.tract.regions$county.fips.numeric %in% county_zoom, "region"]
+        stopifnot(all(county_zoom %in% unique(ca.tract.regions$county.fips.numeric)))
+        tracts = ca.tract.regions[ca.tract.regions$county.fips.numeric %in% county_zoom, "region"]
         super$set_zoom(tracts)        
       }
     }
@@ -51,16 +51,16 @@ CaTractChoropleth = R6Class("CaTractChoropleth",
 #' Create a choropleth of US Census Tracts in California
 #' 
 #' @param df A data.frame with a column named "region" and a column named "value".  Elements in 
-#' the "region" column must exactly match how census tracts are labelled in in the "region" column in ?ca.census.tract.regions
+#' the "region" column must exactly match how census tracts are labelled in in the "region" column in ?ca.tract.regions
 #' @param title An optional title for the map.  
 #' @param legend An optional name for the legend.  
 #' @param num_colors The number of colors on the map. A value of 1 
 #' will use a continuous scale. A value in [2, 9] will use that many colors. 
 #' @param tract_zoom An optional vector of tracts to zoom in on. Elements of this vector must exactly 
-#' match the names of tracts as they appear in the "region" column of ?ca.census.tract.regions.
+#' match the names of tracts as they appear in the "region" column of ?ca.tract.regions.
 #' @param county_zoom An optional vector of county FIPS codes to zoom in on. Elements of this 
 #' vector must exactly match the names of counties as they appear in the "county.fips.numeric" column 
-#' of ?ca.census.tract.regions.
+#' of ?ca.tract.regions.
 #'
 #' @seealso \url{https://www.census.gov/geo/reference/gtc/gtc_ct.html} for more information on Census Tracts
 #' @export
