@@ -24,3 +24,5 @@ Imports:
     ggplot2,
     dplyr,
     acs    
+Suggests:
+    knitr
