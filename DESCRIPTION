@@ -1,14 +1,13 @@
 Package: choroplethrCaCensusTract
-Type: Package
-Title:  Shapefile, metadata and visualization functions for US Census Tracts in California
-Version: 1.0.0
-Date: 2015-06-03
-Author: Ari Lamstein
-Maintainer: Ari Lamstein <arilamstein@gmail.com>
+Title:  Shapefile, Metadata and Visualization Functions for US Census Tracts in California
 Description: The shapefile is taken from the US Census Bureau's 2010
     Cartographic Boundary Shapefiles - Census Tracts. See
     ?ca.tract.map for additional information. Visualization functions 
     are ?ca_tract_choropleth and ?ca_tract_choropleth_acs.
+Version: 1.0.0
+Date: 2015-06-03
+Author: Ari Lamstein
+Maintainer: Ari Lamstein <arilamstein@gmail.com>
 License: MIT + file LICENSE
 URL: https://github.com/arilamstein/choroplethrCaCensusTract,
     https://groups.google.com/forum/#!forum/choroplethr
@@ -22,7 +21,3 @@ Imports:
     acs
 Depends: 
     choroplethr (>= 3.0.0)
-Suggests: 
-    knitr
-VignetteBuilder: 
-    knitr

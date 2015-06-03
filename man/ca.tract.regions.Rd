@@ -12,6 +12,6 @@ In addition to the region/GEOID it contains the TRACTCE and county FIPS code
 as both an integer and character (i.e. with and without the leading "0")
 }
 \seealso{
-?ca.tract.map
+\link{ca.tract.map}
 }
 

@@ -8,11 +8,11 @@
 #' A column named "county.fips.numeric" was added which is the numeric version
 #' of the county FIPS code of the tract.
 #'  
-#' @seealso ?ca.tract.regions
+#' @seealso \link{ca.tract.regions}
 #' @docType data
 #' @name ca.tract.map
 #' @usage data(ca.tract.map)
-#' @references Taken from https://www.census.gov/geo/maps-data/data/cbf/cbf_tracts.html.
+#' @references Taken from \url{https://www.census.gov/geo/maps-data/data/cbf/cbf_tracts.html}.
 NULL
 
 #' Metadata about the California Census Tracts map
@@ -20,7 +20,7 @@ NULL
 #' In addition to the region/GEOID it contains the TRACTCE and county FIPS code
 #' as both an integer and character (i.e. with and without the leading "0")
 #' 
-#' @seealso ?ca.tract.map
+#' @seealso \link{ca.tract.map}
 #'  
 #' @docType data
 #' @name ca.tract.regions
@@ -30,23 +30,24 @@ NULL
 #'  A data.frame containing population estimates for California Census Tracts in 2012. 
 #' 
 #' @references Taken from the US American Community Survey (ACS) 5 year estimates.
-#' @seealso ?df_ca_tract_demographics
+#' @seealso \link{df_ca_tract_demographics}
 #'  
 #' @docType data
 #' @name df_pop_ca_tract
 #' @usage data(df_pop_ca_tract)
 #' @examples
-#' \dontrun{
 #' data(df_pop_ca_tract)
-#' ca_tract_choropleth(df_pop_ca_tract, 
-#'                     title  = "2012 California Census Tract\n Population Estimates", 
-#'                     legend = "Population")
-#' 
+#'
 #' # zoom in on San Francisco, which has FIPS code 6075
 #' ca_tract_choropleth(df_pop_ca_tract, 
 #'                     title  = "2012 San Francisco Census Tract\n Population Estimates", 
 #'                     legend = "Population",
 #'                     county_zoom = 6075)
+#' \dontrun{
+#' ca_tract_choropleth(df_pop_ca_tract, 
+#'                     title  = "2012 California Census Tract\n Population Estimates", 
+#'                     legend = "Population")
+#' 
 #' }
 NULL
 
@@ -59,7 +60,6 @@ NULL
 #' @keywords data
 #' @usage data(df_ca_tract_demographics)
 #' @examples
-#'  \dontrun{
 #'  # 2013 per capita income estimate
 #'  data(df_ca_tract_demographics)
 #'  colnames(df_ca_tract_demographics)
@@ -70,5 +70,4 @@ NULL
 #'                      legend      = "Income",
 #'                      num_colors  = 1,
 #'                      county_zoom = 6075)
-#'  }
 NULL

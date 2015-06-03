@@ -17,9 +17,9 @@ A column named "county.fips.numeric" was added which is the numeric version
 of the county FIPS code of the tract.
 }
 \references{
-Taken from https://www.census.gov/geo/maps-data/data/cbf/cbf_tracts.html.
+Taken from \url{https://www.census.gov/geo/maps-data/data/cbf/cbf_tracts.html}.
 }
 \seealso{
-?ca.tract.regions
+\link{ca.tract.regions}
 }
 
