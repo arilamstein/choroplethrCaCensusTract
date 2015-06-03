@@ -31,6 +31,12 @@ Creates a choropleth of California Census Tracts the US Census' American Communi
 Requires the acs package to be installed, and a Census API Key to be set with
 the acs's api.key.install function.  Census API keys can be obtained at http://www.census.gov/developers/tos/key_request.html.
 }
+\examples{
+\dontrun{
+# per capita income, san francisco (fips code 6075)
+ca_tract_choropleth_acs("B19301", county_zoom=6075)
+}
+}
 \references{
 Uses the acs package created by Ezra Haber Glenn.
 }

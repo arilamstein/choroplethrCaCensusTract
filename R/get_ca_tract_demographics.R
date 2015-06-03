@@ -9,6 +9,28 @@
 #' @references A list of all ACS Surveys: http://factfinder.census.gov/faces/affhelp/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS
 #' @importFrom acs geo.make acs.fetch geography estimate
 #' @export
+#' @examples
+#' \dontrun{
+#' df = get_ca_tract_demographics(endyear=2010, span=5)
+#' colnames(df)
+#'
+#' # analyze the percent of people who are white not hispanic
+#' # a boxplot shows the distribution
+#' boxplot(df$percent_white)
+#' 
+#' # a choropleth map shows the location of the values in california
+#' # set the 'value' column to be the column we want to render
+#' df$value = df$percent_white
+#' ca_tract_choropleth(df, 
+#'                     title="2010 Census Tracts\nPercent White not Hispanic", 
+#'                     legend="Percent")
+#'
+#' # zoom into san francisco county
+#' ca_tract_choropleth(df, 
+#'                     title="2010 Census Tracts\nPercent White not Hispanic", 
+#'                     legend="Percent",
+#'                     county_zoom=6075)
+#' }
 get_ca_tract_demographics = function(endyear=2013, span=5)
 {  
   all.ca.tracts = get_all_ca_tracts()

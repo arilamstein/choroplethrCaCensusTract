@@ -111,6 +111,11 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
 #' @references Uses the acs package created by Ezra Haber Glenn.
 #' @export
 #' @importFrom acs acs.fetch geography estimate geo.make
+#' @examples
+#' \dontrun{
+#' # per capita income, san francisco (fips code 6075)
+#' ca_tract_choropleth_acs("B19301", county_zoom=6075)
+#' }
 ca_tract_choropleth_acs = function(tableId, endyear=2011, span=5, num_colors=7, tract_zoom=NULL, county_zoom=NULL)
 {
   acs.data = get_ca_tract_acs_data(tableId, endyear, span)
