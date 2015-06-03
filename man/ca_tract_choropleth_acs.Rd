@@ -35,16 +35,18 @@ the acs's api.key.install function.  Census API keys can be obtained at http://w
 \dontrun{
 # per capita income, san francisco (fips code 6075)
 ca_tract_choropleth_acs("B19301", county_zoom=6075)
+
+# aggregate public assistance income, san francisco
+ca_tract_choropleth_acs("B19067", county_zoom=6075)
 }
 }
 \references{
+The choroplethr guide to Census data: http://cran.r-project.org/web/packages/choroplethr/vignettes/e-mapping-us-census-data.html
+
 Uses the acs package created by Ezra Haber Glenn.
 }
 \seealso{
 \code{api.key.install} in the acs package which sets an Census API key for the acs library
-
-http://factfinder2.census.gov/faces/help/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS
-which contains a list of all ACS surveys.
 }
 \keyword{acs}
 \keyword{choropleth,}

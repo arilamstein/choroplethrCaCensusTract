@@ -106,8 +106,7 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
 #' @keywords choropleth, acs
 #' 
 #' @seealso \code{api.key.install} in the acs package which sets an Census API key for the acs library
-#' @seealso http://factfinder2.census.gov/faces/help/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS 
-#' which contains a list of all ACS surveys.
+#' @references The choroplethr guide to Census data: http://cran.r-project.org/web/packages/choroplethr/vignettes/e-mapping-us-census-data.html
 #' @references Uses the acs package created by Ezra Haber Glenn.
 #' @export
 #' @importFrom acs acs.fetch geography estimate geo.make
@@ -115,6 +114,9 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
 #' \dontrun{
 #' # per capita income, san francisco (fips code 6075)
 #' ca_tract_choropleth_acs("B19301", county_zoom=6075)
+#' 
+#' # aggregate public assistance income, san francisco
+#' ca_tract_choropleth_acs("B19067", county_zoom=6075)
 #' }
 ca_tract_choropleth_acs = function(tableId, endyear=2011, span=5, num_colors=7, tract_zoom=NULL, county_zoom=NULL)
 {

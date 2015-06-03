@@ -32,14 +32,13 @@ Create a choropleth of US Census Tracts in California
 \dontrun{
 data(df_pop_ca_tract)
 
-# entire state
 ca_tract_choropleth(df_pop_ca_tract,
                     title  = "2012 California Census Tract\\n Population Estimates",
                     legend = "Population")
 
 # zoom in on San Francisco, which has FIPS code 6075
 ca_tract_choropleth(df_pop_ca_tract,
-                    title  = "2012 California Census Tract\\n Population Estimates",
+                    title  = "2012 San Francisco Census Tract\\n Population Estimates",
                     legend = "Population",
                     county_zoom = 6075)
 
@@ -47,7 +46,7 @@ ca_tract_choropleth(df_pop_ca_tract,
  data(df_ca_tract_demographics)
  df_ca_tract_demographics$value = df_ca_tract_demographics$per_capita
  ca_tract_choropleth(df_ca_tract_demographics,
-                     title       = "2013 California Census Tract\\n Per Capita Income",
+                     title       = "2013 San Francisco Census Tract\\n Per Capita Income",
                      legend      = "Income",
                      num_colors  = 1,
                      county_zoom = 6075)

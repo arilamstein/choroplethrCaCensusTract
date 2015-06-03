@@ -19,7 +19,7 @@ ca_tract_choropleth(df_pop_ca_tract,
 
 # zoom in on San Francisco, which has FIPS code 6075
 ca_tract_choropleth(df_pop_ca_tract,
-                    title  = "2012 California Census Tract\\n Population Estimates",
+                    title  = "2012 San Francisco Census Tract\\n Population Estimates",
                     legend = "Population",
                     county_zoom = 6075)
 }
@@ -28,6 +28,6 @@ ca_tract_choropleth(df_pop_ca_tract,
 Taken from the US American Community Survey (ACS) 5 year estimates.
 }
 \seealso{
-?df_pop_ca_tract
+?df_ca_tract_demographics
 }
 
