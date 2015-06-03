@@ -50,7 +50,7 @@ NULL
 #' }
 NULL
 
-#' A data.frame containing demographic statistics for each Census Tract in the California.
+#' A data.frame containing demographic statistics for each Census Tract in California.
 #'       
 #' @name df_ca_tract_demographics
 #' @docType data
