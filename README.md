@@ -1,6 +1,6 @@
 # choroplethrCaCensusTract
 
-v1.1.0: [![Build Status](https://travis-ci.org/arilamstein/choroplethrCaCensusTract.svg?branch=v1.0.0)](https://travis-ci.org/arilamstein/choroplethrCaCensusTract/branches) 
+v1.0.0: [![Build Status](https://travis-ci.org/arilamstein/choroplethrCaCensusTract.svg?branch=v1.0.0)](https://travis-ci.org/arilamstein/choroplethrCaCensusTract/branches) 
 
 Master: [![Build Status](https://travis-ci.org/arilamstein/choroplethrCaCensusTract.svg)](https://travis-ci.org/arilamstein/choroplethrCaCensusTract)
 
