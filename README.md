@@ -16,3 +16,7 @@ library(devtools)
 install_github("choroplethrCaCensusTract@v1.0.0", "arilamstein")
 library(choroplethrCaCensusTract)
 ```
+
+## Documentation
+
+Besides the built-in documentation, you can learn more about this package on the [blog post](http://www.arilamstein.com/blog/2015/06/11/new-package-choroplethrcacensustract/) I wrote about it, which includes several examples.
