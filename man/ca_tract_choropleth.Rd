@@ -5,7 +5,7 @@
 \title{Create a choropleth of US Census Tracts in California}
 \usage{
 ca_tract_choropleth(df, title = "", legend = "", num_colors = 7,
-  tract_zoom = NULL, county_zoom = NULL)
+  tract_zoom = NULL, county_zoom = NULL, reference_map = FALSE)
 }
 \arguments{
 \item{df}{A data.frame with a column named "region" and a column named "value".  Elements in
@@ -24,6 +24,8 @@ match the names of tracts as they appear in the "region" column of ?ca.tract.reg
 \item{county_zoom}{An optional vector of county FIPS codes to zoom in on. Elements of this
 vector must exactly match the names of counties as they appear in the "county.fips.numeric" column
 of ?ca.tract.regions.}
+
+\item{reference_map}{If true, render the choropleth over a reference map from Google Maps.}
 }
 \description{
 Create a choropleth of US Census Tracts in California

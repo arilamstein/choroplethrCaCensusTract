@@ -61,6 +61,7 @@ CaTractChoropleth = R6Class("CaTractChoropleth",
 #' @param county_zoom An optional vector of county FIPS codes to zoom in on. Elements of this 
 #' vector must exactly match the names of counties as they appear in the "county.fips.numeric" column 
 #' of ?ca.tract.regions.
+#' @param reference_map If true, render the choropleth over a reference map from Google Maps.
 #'
 #' @seealso \url{https://www.census.gov/geo/reference/gtc/gtc_ct.html} for more information on Census Tracts
 #' @export
@@ -97,12 +98,22 @@ CaTractChoropleth = R6Class("CaTractChoropleth",
 #'                      num_colors  = 1,
 #'                      county_zoom = 6075)
 #' }
-ca_tract_choropleth = function(df, title="", legend="", num_colors=7, tract_zoom=NULL, county_zoom=NULL)
+ca_tract_choropleth = function(df, 
+                               title         = "", 
+                               legend        = "", 
+                               num_colors    = 7, 
+                               tract_zoom    = NULL, 
+                               county_zoom   = NULL, 
+                               reference_map = FALSE)
 {
   c = CaTractChoropleth$new(df)
   c$title  = title
   c$legend = legend
-  c$set_zoom_tract(tract_zoom=tract_zoom, county_zoom=county_zoom)
+  c$set_zoom_tract(tract_zoom = tract_zoom, county_zoom = county_zoom)
   c$set_num_colors(num_colors)
-  c$render()
+  if (reference_map) {
+    c$render_with_reference_map()
+  } else {
+    c$render()
+  }
 }

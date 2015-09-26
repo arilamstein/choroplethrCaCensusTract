@@ -4,8 +4,8 @@ Description: The shapefile is taken from the US Census Bureau's 2010
     Cartographic Boundary Shapefiles - Census Tracts. See
     ?ca.tract.map for additional information. Visualization functions 
     are ?ca_tract_choropleth and ?ca_tract_choropleth_acs.
-Version: 1.0.0
-Date: 2015-06-03
+Version: 1.1.0
+Date: 2015-09-25
 Author: Ari Lamstein
 Maintainer: Ari Lamstein <arilamstein@gmail.com>
 License: MIT + file LICENSE
@@ -20,4 +20,4 @@ Imports:
     dplyr,
     acs
 Depends: 
-    choroplethr (>= 3.0.0)
+    choroplethr (>= 3.3.0)
