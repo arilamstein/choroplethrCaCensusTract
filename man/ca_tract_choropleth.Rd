@@ -31,32 +31,35 @@ of ?ca.tract.regions.}
 Create a choropleth of US Census Tracts in California
 }
 \examples{
+# zoom in on Los Angeles, which has FIPS code 6037
 data(df_pop_ca_tract)
-# zoom in on San Francisco, which has FIPS code 6075
 ca_tract_choropleth(df_pop_ca_tract,
-                    title  = "2012 San Francisco Census Tract\\n Population Estimates",
+                    title  = "2012 Los Angeles Census Tract\\n Population Estimates",
                     legend = "Population",
-                    county_zoom = 6075)
+                    county_zoom = 6037)
+
+# add a reference map
+ca_tract_choropleth(df_pop_ca_tract,
+                    title  = "2012 Los Angeles Census Tract\\n Population Estimates",
+                    legend        = "Population",
+                    county_zoom   = 6037,
+                    reference_map = TRUE)
+
 \dontrun{
 
 ca_tract_choropleth(df_pop_ca_tract,
                     title  = "2012 California Census Tract\\n Population Estimates",
                     legend = "Population")
 
-# zoom in on San Francisco, which has FIPS code 6075
-ca_tract_choropleth(df_pop_ca_tract,
-                    title  = "2012 San Francisco Census Tract\\n Population Estimates",
-                    legend = "Population",
-                    county_zoom = 6075)
-
- # 2013 per capita income estimate
- data(df_ca_tract_demographics)
- df_ca_tract_demographics$value = df_ca_tract_demographics$per_capita
- ca_tract_choropleth(df_ca_tract_demographics,
-                     title       = "2013 San Francisco Census Tract\\n Per Capita Income",
-                     legend      = "Income",
-                     num_colors  = 1,
-                     county_zoom = 6075)
+# 2013 per capita income estimate
+data(df_ca_tract_demographics)
+df_ca_tract_demographics$value = df_ca_tract_demographics$per_capita
+ca_tract_choropleth(df_ca_tract_demographics,
+                    title         = "2013 Los Angeles Census Tract\\n Per Capita Income",
+                    legend        = "Income",
+                    num_colors    = 4,
+                    county_zoom   = 6037,
+                    reference_map = TRUE)
 }
 }
 \seealso{
