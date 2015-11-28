@@ -6,6 +6,10 @@ Master: [![Build Status](https://travis-ci.org/arilamstein/choroplethrCaCensusTr
 -->
 Shapefile, metadata and visualization functions for US Census Tracts in California
 
+## Development
+
+I blog about this package's development [here](http://www.arilamstein.com/blog).
+
 ## Installation
 
 To install the package type the following:
