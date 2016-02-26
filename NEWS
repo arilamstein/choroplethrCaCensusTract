@@ -1,0 +1,4 @@
+choroplethrCaCensusTract 1.2.0
+----------------------------------------------------------------
+-Function get_ca_tract_acs_data now takes a parameter include_moe which, if true,
+will return a column with 90% margins of error.

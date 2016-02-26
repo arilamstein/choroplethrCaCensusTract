@@ -23,10 +23,11 @@ get_all_ca_tracts = function()
 #' on the same longitude and latitude map to scale. This variable is only checked when the "states" variable is equal to all 50 states.
 #' @param column_idx The optional column id of the table to use. If not specified and the table has multiple columns,
 #' you will be prompted for a column id.
+#' @param include_moe Whether to include the 90 percent margin of error. 
 #' @export
 #' @seealso http://factfinder2.census.gov/faces/help/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS, which lists all ACS Surveys.
 #' @importFrom acs acs.fetch geography estimate geo.make
-get_ca_tract_acs_data = function(tableId, endyear=2012, span=5, column_idx=-1)
+get_ca_tract_acs_data = function(tableId, endyear=2012, span=5, column_idx=-1, include_moe=FALSE)
 {
   acs.data = acs.fetch(geography    = get_all_ca_tracts(), 
                        table.number = tableId,
@@ -38,7 +39,7 @@ get_ca_tract_acs_data = function(tableId, endyear=2012, span=5, column_idx=-1)
     column_idx = get_column_idx(acs.data, tableId) # some tables have multiple columns 
   }
   title      = acs.data@acs.colnames[column_idx] 
-  df         = convert_acs_obj_to_df(acs.data, column_idx) # choroplethr requires a df
+  df         = convert_acs_obj_to_df(acs.data, column_idx, include_moe) # choroplethr requires a df
   list(df=df, title=title) # need to return 2 values here
 }
   
@@ -58,12 +59,17 @@ get_column_idx = function(acs.data, tableId)
 # the acs package returns data as a custom S4 object. But we need the data as a data.frame.
 # with 1 column named "region". The map requires the region to be 11 character - 
 # 5 for the county FIPS code and 6 for the tract
-convert_acs_obj_to_df = function(acs.data, column_idx) 
+convert_acs_obj_to_df = function(acs.data, column_idx, include_moe) 
 {
   df = data.frame(state  = geography(acs.data)$state,   # integer
                   county = geography(acs.data)$county,  # integer
                   tract  = geography(acs.data)$tract,   # character
                   value  = as.numeric(estimate(acs.data[,column_idx])))
+  
+  if (include_moe)
+  {
+    df$margin.of.error = 1.645 * as.numeric(standard.error(acs.data[, column_idx])) 
+  }    
   
   # county fips code must be 5 chars
   # 2 chars for the state (i.e. leading "0")
@@ -83,7 +89,13 @@ convert_acs_obj_to_df = function(acs.data, column_idx)
   # now concat with the tract id
   df$region = paste0(df$state, df$county, df$tract)
 
-  df[, c("region", "value")] # only return (region, value) pairs
+  # only include relevant columns
+  if (include_moe)
+  {
+    df[, c("region", "value", "margin.of.error")] # only return (region, value) pairs
+  } else {
+    df[, c("region", "value")]
+  }
 }
 
 #' Create a choropleth map of California Census Tracts from ACS data
