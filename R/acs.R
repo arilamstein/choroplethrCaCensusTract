@@ -59,6 +59,7 @@ get_column_idx = function(acs.data, tableId)
 # the acs package returns data as a custom S4 object. But we need the data as a data.frame.
 # with 1 column named "region". The map requires the region to be 11 character - 
 # 5 for the county FIPS code and 6 for the tract
+#' @importFrom acs standard.error
 convert_acs_obj_to_df = function(acs.data, column_idx, include_moe) 
 {
   df = data.frame(state  = geography(acs.data)$state,   # integer
