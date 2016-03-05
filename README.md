@@ -17,7 +17,7 @@ To install the package type the following:
 ```
 # install.packages("devtools")
 library(devtools)
-install_github("arilamstein/choroplethrCaCensusTract@v1.1.0")
+install_github("arilamstein/choroplethrCaCensusTract@v1.2.0")
 library(choroplethrCaCensusTract)
 ```
 
