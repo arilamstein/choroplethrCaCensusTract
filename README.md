@@ -1,14 +1,5 @@
 # choroplethrCaCensusTract
-<!--
-v1.0.0: [![Build Status](https://travis-ci.org/arilamstein/choroplethrCaCensusTract.svg?branch=v1.0.0)](https://travis-ci.org/arilamstein/choroplethrCaCensusTract/branches) 
-
-Master: [![Build Status](https://travis-ci.org/arilamstein/choroplethrCaCensusTract.svg)](https://travis-ci.org/arilamstein/choroplethrCaCensusTract)
--->
 Shapefile, metadata and visualization functions for US Census Tracts in California
-
-## Development
-
-I blog about this package's development [here](http://www.arilamstein.com/blog).
 
 ## Installation
 
@@ -23,4 +14,4 @@ library(choroplethrCaCensusTract)
 
 ## Documentation
 
-Besides the built-in documentation, you can learn more about this package on the [blog post](http://www.arilamstein.com/blog/2015/06/11/new-package-choroplethrcacensustract/) I wrote about it, which includes several examples. 
+Documentation for this package, including a free course, is available [here](http://www.arilamstein.com/open-source).
