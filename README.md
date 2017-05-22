@@ -12,6 +12,14 @@ install_github("arilamstein/choroplethrCaCensusTract@v1.2.0")
 library(choroplethrCaCensusTract)
 ```
 
+## Free Course
+
+If you would like a guided introduction to choroplethr, then take the free course [Learn to Map Census Data in R](http://www.CensusMappingCourse.com).
+
 ## Documentation
 
-Documentation for this package, including a free course, is available [here](http://www.arilamstein.com/open-source).
+Documentation for choroplethr can be found [here](http://www.arilamstein.com/open-source).
+
+## Support
+
+Support for choroplethr can be found [here](http://www.arilamstein.com/choroplethr-support).
